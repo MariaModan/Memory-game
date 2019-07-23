@@ -1,36 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../css/card.css';
+import PropTypes from 'prop-types';
 
-class Card extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            faceUp: false,
-        }
-    }
+class Card extends React.Component{ 
+    render(){
+        const {id, value, faceUp} = this.props.card;
 
-    // changes the state of faceUp when the card is clicked
-    handleClick () {
-        this.setState({
-            faceUp: !this.state.faceUp
-        })
-    }
-
-    //updates the card stype depending on the faceUp state
-    cardStyle (){
-        return this.state.faceUp ? "card faceUp" : "card faceDown";
-    }
-    
-    render() {
-        return (
+        return (faceUp ? (
             <div >
-                <div className={this.cardStyle()} onClick={this.handleClick.bind(this)} >Card</div>
+                <div className='card faceUp' onClick={this.props.handleClick.bind(this, id)}>{value}</div>
             </div>
-        );
+            ) : (
+            <div >
+                <div className='card faceDown' onClick={this.props.handleClick.bind(this, id)}></div>
+            </div>
+            )
+        )
     }
 }
 
-
+Card.propTypes = {
+    handleClick: PropTypes.func.isRequired
+}
 
 
 export default Card;
