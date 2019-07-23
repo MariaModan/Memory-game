@@ -38,14 +38,12 @@ handleClick = (id) => {
             }
             return card;
         })
-    }, () => {setTimeout(checkMatches(),1000)});
+    }, () => {setTimeout(checkMatches,2000);});
     
     //Case when 2 cards are faceup
     const checkMatches = () => {
         
-        if (this.state.cardsClicked.length === 2 && this.state.cardsClicked[0].value !== this.state.cardsClicked[1].value){
-            setTimeout(() => {},3000);
-
+        if (this.state.cardsClicked.length === 2 && this.state.cardsClicked[0].value !== this.state.cardsClicked[1].value) {
             this.setState({
                 cards: this.state.cards.map ( card => {
                     if ( card.id === this.state.cardsClicked[0].id || card.id === this.state.cardsClicked[1].id) {
