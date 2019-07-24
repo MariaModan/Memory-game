@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Board = ({cards, cardsClicked, handleClick}) => {
             return(
-            <div style={{display: 'flex'}}>
+            <div style={boardStyle}>
                 {
                     cards.map (card => {
                         return (
@@ -18,6 +18,12 @@ const Board = ({cards, cardsClicked, handleClick}) => {
 
 Board.propTypes = {
     cardsClicked: PropTypes.array.isRequired
+}
+
+const boardStyle ={
+    width: '600px',
+    display: 'flex', 
+    flexWrap:'wrap'
 }
 
 export default Board;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from './Board.js';
+import cards from '../cards';
 
 
 
@@ -7,20 +8,27 @@ class Game extends Component {
     constructor(){
         super();
         this.state = {
-            cards: [
-                {value: 'A',
-                id: 0,
-                faceUp: false,},
-                {value: 'B',
-                id: 1,
-                faceUp: false,},
-                {value: 'A',
-                id: 2,
-                faceUp: false,}
-            ],
+            cards: cards,
             cardsClicked: [],
         }
     }
+
+// if the 2 cards have the same value it leavs them face-up, otherwise it turns them face-down
+checkMatches = () => {
+    if (this.state.cardsClicked[0].value !== this.state.cardsClicked[1].value) {
+        this.setState({
+            cards: this.state.cards.map ( card => {
+                if ( card.id === this.state.cardsClicked[0].id || card.id === this.state.cardsClicked[1].id) {
+                    card.faceUp = false;
+                }
+                return card;
+                })
+            });
+        }
+    this.setState({
+        cardsClicked: []
+    });   
+}
 
 handleClick = (id) => {
 
@@ -28,7 +36,6 @@ handleClick = (id) => {
     if (this.state.cards[id].faceUp){
         return ;
     }
-    
     
     this.setState({
         cardsClicked: [...this.state.cardsClicked, this.state.cards[id]],
@@ -38,31 +45,12 @@ handleClick = (id) => {
             }
             return card;
         })
-    }, () => {setTimeout(checkMatches,2000);});
-    
-    //Case when 2 cards are faceup
-    const checkMatches = () => {
-        
-        if (this.state.cardsClicked.length === 2 && this.state.cardsClicked[0].value !== this.state.cardsClicked[1].value) {
-            this.setState({
-                cards: this.state.cards.map ( card => {
-                    if ( card.id === this.state.cardsClicked[0].id || card.id === this.state.cardsClicked[1].id) {
-                        card.faceUp = false;
-                    }
-                    return card;
-                }),
-                cardsClicked: []
-            });
-           
-        }else if (this.state.cardsClicked.length === 2){
-            this.setState({
-                cardsClicked: []
-            })
-        }else return;
-    }  
-   
+    }, () => {setTimeout(() => 
+                {if (this.state.cardsClicked.length === 2){
+                    this.checkMatches();
+                }}
+            ,2000);});   
 }
-
 
     render() {
         
