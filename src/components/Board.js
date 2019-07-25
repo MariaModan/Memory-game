@@ -8,7 +8,7 @@ const Board = ({cards, cardsClicked, handleClick}) => {
                 {
                     cards.map (card => {
                         return (
-                            <Card card={card} key={card.id} cardsClicked={cardsClicked} handleClick={handleClick}/>   
+                            <Card card={card} key={card.index} cardsClicked={cardsClicked} handleClick={handleClick}/>   
                         )
                     })
                 }

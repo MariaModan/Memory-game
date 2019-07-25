@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component{ 
     render(){
-        const {id, value, faceUp} = this.props.card;
+        const {value, faceUp, index} = this.props.card;
 
         return (faceUp ? (
             <div >
-                <div className='card faceUp' onClick={this.props.handleClick.bind(this, id)}>{value}</div>
+                
+                <div className='card faceUp' onClick={this.props.handleClick.bind(this, index)}>{value}</div>
             </div>
             ) : (
             <div >
-                <div className='card faceDown' onClick={this.props.handleClick.bind(this, id)}></div>
+                <div className='card faceDown' onClick={this.props.handleClick.bind(this, index)}></div>
             </div>
             )
         )
