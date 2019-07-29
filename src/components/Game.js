@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Board from './Board.js';
 import cards from '../cards';
-import ResetBtn from './ResetBtn'
+import ResetBtn from './ResetBtn';
+import WinnerBanner from './WinnerBanner';
+import PlayerStats from './PlayerStats';
 
 
 //Shuffles the cards at the beginning of the game
@@ -33,6 +35,8 @@ class Game extends Component {
                 return card;
             }),
             cardsClicked: [],
+            moves: 0,
+            topMoves: 12,
         };
         
     }
@@ -66,8 +70,8 @@ class Game extends Component {
             return ;
         }
         
-        //need to fix: when i press fast it doens't add the third card to the cardsClicked array
         this.setState({
+            moves: (this.state.moves + 1),
             cardsClicked: [...this.state.cardsClicked, this.state.cards[index]],
             cards: this.state.cards.map ( card => {
                 if(card.index === index){
@@ -80,7 +84,9 @@ class Game extends Component {
 
     isWinner = () => {
         if (this.state.cards.filter( card => card.faceUp === false).length === 0){
-            console.log('you win!');
+            return true;
+        } else {
+            return false;
         }
          
     }
@@ -102,12 +108,16 @@ class Game extends Component {
         this.isWinner();
         return (
             <div>
+                <PlayerStats moves={this.state.moves} topMoves={this.state.topMoves}/>
                 <Board 
                     cardsClicked={this.state.cardsClicked} 
                     cards={this.state.cards}
                     handleClick={this.handleClick}
                 />
-                <ResetBtn resetGame={this.resetGame}/>
+                {
+                    this.isWinner() ? <WinnerBanner resetGame={this.resetGame} /> : <ResetBtn resetGame={this.resetGame}/>
+                }
+                
             </div>
         )
     }
