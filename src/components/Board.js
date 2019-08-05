@@ -5,8 +5,8 @@ import '../css/board.css';
 
 const Board = ({cards, cardsClicked, handleClick}) => {
             return(
-                <div class='boardContainer'>
-                    <div class='board'>
+                <div className='boardContainer'>
+                    <div className='board'>
                         {
                             cards.map (card => {
                                 return (
