@@ -4,6 +4,8 @@ import cards from '../cards';
 import ResetBtn from './ResetBtn';
 import WinnerBanner from './WinnerBanner';
 import PlayerStats from './PlayerStats';
+import Title from './Title';
+import '../css/game.css';
 
 
 //Shuffles the cards at the beginning of the game
@@ -30,13 +32,13 @@ class Game extends Component {
     constructor(){
         super();
         this.state = {
+            //shuffles the cards and then adds their specific indexes to be used as keys later
             cards: shuffleCards(cards).map( (card, index) => {
                 card.index = index;
                 return card;
             }),
             cardsClicked: [],
             moves: 0,
-            topMoves: 12,
         };
         
     }
@@ -62,7 +64,6 @@ class Game extends Component {
 
         //a card won't be clickable if it is already faceup
         if (this.state.cards[index].faceUp){
-            console.log(this.state.cards[index]);
             return ;
         }
 
@@ -84,6 +85,16 @@ class Game extends Component {
 
     isWinner = () => {
         if (this.state.cards.filter( card => card.faceUp === false).length === 0){
+            fetch('http://localhost:3005/updateTopScore', {
+                method: 'put',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    "score": this.state.moves
+                })
+            })
+            .then( response => response.json())
+            .then(data => console.log(data))
+            .catch( err => console.log(err))
             return true;
         } else {
             return false;
@@ -100,7 +111,8 @@ class Game extends Component {
                 }
                 return card;
             }),
-            cardsClicked: []
+            cardsClicked: [],
+            moves: 0
         })
     }
 
@@ -108,7 +120,8 @@ class Game extends Component {
         this.isWinner();
         return (
             <div>
-                <PlayerStats moves={this.state.moves} topMoves={this.state.topMoves}/>
+                <PlayerStats moves={this.state.moves}/>
+                <Title />
                 <Board 
                     cardsClicked={this.state.cardsClicked} 
                     cards={this.state.cards}

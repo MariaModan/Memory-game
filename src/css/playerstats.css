@@ -1,3 +1,11 @@
 .playerStatsContainer {
     margin: 0.7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 500px;
+    font-size: 1.2rem;
+}
+
+.quickest {
+    justify-self: end;
 }

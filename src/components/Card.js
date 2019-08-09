@@ -9,7 +9,7 @@ class Card extends React.Component{
         return (faceUp ? (
             <div >
                 <div className='card faceUp' onClick={this.props.handleClick.bind(this, index)}>
-                   <img width='90px' src={require(`../pics/${value}`)} />
+                   <img width='140px' src={require(`../pics/${value}`)} />
                 </div>
             </div>
             ) : (

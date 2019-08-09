@@ -1,7 +1,7 @@
 .card{
     margin:0.5rem;
-    width: 7rem;    
-    height: 10rem;
+    width: 9rem;    
+    height: 13rem;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -9,12 +9,13 @@
     align-items: center;
     color: #fff;
     border: 1px solid #000;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.4);
 }
 .faceUp{
-    background: url(https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) 
+    background: #fff;
 }
 
 .faceDown{
-    background: url(https://images.unsplash.com/photo-1559644705-9d56b56e1380?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80)
+    background: url(https://images.unsplash.com/photo-1559644705-9d56b56e1380?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
+    
 }

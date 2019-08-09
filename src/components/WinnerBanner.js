@@ -4,7 +4,7 @@ const WinnerBanner = ({resetGame}) => {
     return(
         <div style={WinnerBannerStyle}>
             <h1 style={textStyle}>You Win!</h1>
-            <button onClick={resetGame} style={btnStyle}>Reset Game</button>
+            <button onClick={resetGame} style={btnStyle}>Restart Game</button>
         </div>
     );
 }
