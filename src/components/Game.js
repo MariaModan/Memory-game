@@ -5,7 +5,7 @@ import ResetBtn from './ResetBtn';
 import WinnerBanner from './WinnerBanner';
 import PlayerStats from './PlayerStats';
 import Title from './Title';
-import '../css/game.css';
+
 
 
 //Shuffles the cards at the beginning of the game
@@ -97,7 +97,7 @@ class Game extends Component {
             .catch( err => console.log(err))
             return true;
         } else {
-            return true;
+            return false;
         }
          
     }

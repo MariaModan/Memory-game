@@ -11,7 +11,7 @@
     left: 15%;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 3px 5px 20px #4681d8 inset;
+    box-shadow: 3px 3px 20px #4681d8 inset;
 }
 
 .text {
@@ -37,3 +37,21 @@
     background: #b4b4b4;
     color:#fff;
 }
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 790px) {
+    .winnerBannerContainer{
+        width: 85vw;
+        height: 80vh;
+        top: 10vh;
+        left: 5vh;
+    }
+    .img{
+        width: 40vh;
+    }
+    .btn{
+        width: 50%;
+        height: 4rem;
+    }
+  }

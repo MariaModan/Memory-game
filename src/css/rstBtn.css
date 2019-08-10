@@ -17,3 +17,14 @@
 .resetBtn:hover {
     background: #fffafa;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 790px) {
+    .resetBtnContainer{
+        margin-top: 0.7rem;
+    }
+    .resetBtn{
+        width: 7rem;
+    }
+  }

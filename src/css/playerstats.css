@@ -9,3 +9,17 @@
 .quickest {
     justify-self: end;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 790px) {
+    .playerStatsContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 105px;
+        margin: 0.2rem;
+    }
+    .playerStatsContainer > p{
+        font-size: 1rem;
+    }
+  }
