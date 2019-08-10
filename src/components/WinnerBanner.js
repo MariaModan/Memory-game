@@ -6,7 +6,7 @@ const WinnerBanner = ({resetGame}) => {
     return(
         <div className='winnerBannerContainer'>
             <h1 className='text' >You Win!</h1>
-            <img src={picture} className='img'/>
+            <img src={picture} alt='people celebrating' className='img'/>
             <button onClick={resetGame} className='btn'>Restart Game</button>
         </div>
     );

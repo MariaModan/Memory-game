@@ -10,7 +10,7 @@ class PlayerStats extends React.Component {
     }
 
     componentDidMount(){
-        fetch('http://localhost:3005/topScore')
+        fetch('https://memorygame-backend.herokuapp.com/topScore')
             .then(response => response.json())    
             .then(data => 
                 {

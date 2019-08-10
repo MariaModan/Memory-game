@@ -85,7 +85,7 @@ class Game extends Component {
 
     isWinner = () => {
         if (this.state.cards.filter( card => card.faceUp === false).length === 0){
-            fetch('http://localhost:3005/updateTopScore', {
+            fetch('https://memorygame-backend.herokuapp.com/updateTopScore', {
                 method: 'put',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
