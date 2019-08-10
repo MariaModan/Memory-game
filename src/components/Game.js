@@ -97,7 +97,7 @@ class Game extends Component {
             .catch( err => console.log(err))
             return true;
         } else {
-            return false;
+            return true;
         }
          
     }
