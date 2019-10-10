@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/winnerbanner.css';
 import picture from '../pics/winner.png';
+import PropTypes from 'prop-types';
 
 const WinnerBanner = ({resetGame}) => {
     return(
@@ -10,6 +11,10 @@ const WinnerBanner = ({resetGame}) => {
             <button onClick={resetGame} className='btn'>Restart Game</button>
         </div>
     );
+}
+
+WinnerBanner.propTypes = {
+    resetGame: PropTypes.func.isRequired
 }
 
   

@@ -10,7 +10,7 @@ const Board = ({cards, cardsClicked, handleClick}) => {
                         {
                             cards.map (card => {
                                 return (
-                                    <Card card={card} key={card.index} cardsClicked={cardsClicked} handleClick={handleClick}/>   
+                                    <Card card={card} key={card.index} handleClick={handleClick}/>   
                                 )
                             })
                         }
@@ -21,7 +21,9 @@ const Board = ({cards, cardsClicked, handleClick}) => {
 }
 
 Board.propTypes = {
-    cardsClicked: PropTypes.array.isRequired
+    cardsClicked: PropTypes.array.isRequired,
+    cards: PropTypes.array.isRequired,
+    handleClick: PropTypes.func.isRequired
 }
 
 

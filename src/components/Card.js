@@ -32,6 +32,7 @@ class Card extends React.Component{
 }
 
 Card.propTypes = {
+    card: PropTypes.object.isRequired,
     handleClick: PropTypes.func.isRequired
 }
 

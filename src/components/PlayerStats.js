@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/playerstats.css';
+import PropTypes from 'prop-types';
 
 class PlayerStats extends React.Component {
     constructor(props) {
@@ -33,6 +34,10 @@ class PlayerStats extends React.Component {
         )
     }
     
+}
+
+PlayerStats.propTypes = {
+    moves: PropTypes.number.isRequired
 }
 
 export default PlayerStats
