@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Board from './Board.js';
-import cards from '../cards';
-import ResetBtn from './ResetBtn';
-import WinnerBanner from './WinnerBanner';
-import PlayerStats from './PlayerStats';
-import Title from './Title';
+import Board from './board/Board.js';
+import cards from '../data/cards';
+import ResetBtn from './board/ResetBtn';
+import WinnerBanner from './board/WinnerBanner';
+import PlayerStats from './playerStats/PlayerStats';
+import Title from './title/Title';
 
 
 

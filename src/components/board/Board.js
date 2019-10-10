@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card.js';
 import PropTypes from 'prop-types';
-import '../css/board.css';
+import '../../css/board.css';
 
 const Board = ({cards, cardsClicked, handleClick}) => {
             return(

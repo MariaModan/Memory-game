@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/playerstats.css';
+import '../../css/playerstats.css';
 import PropTypes from 'prop-types';
 
 class PlayerStats extends React.Component {

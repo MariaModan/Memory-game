@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/card.css';
+import '../../css/card.css';
 import PropTypes from 'prop-types';
 
 class Card extends React.Component{ 
@@ -13,7 +13,7 @@ class Card extends React.Component{
                     onClick={this.props.handleClick.bind(this, index)}
                 >
                    <img 
-                        src={require(`../pics/${value}`)}
+                        src={require(`../../pics/${value}`)}
                         alt={alt} 
                     />
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/winnerbanner.css';
-import picture from '../pics/winner.png';
+import '../../css/winnerbanner.css';
+import picture from '../../pics/winner.png';
 import PropTypes from 'prop-types';
 
 const WinnerBanner = ({resetGame}) => {

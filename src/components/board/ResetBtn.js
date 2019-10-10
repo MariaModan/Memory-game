@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/rstBtn.css';
+import '../../css/rstBtn.css';
 import PropTypes from 'prop-types';
 
 const ResetBtn = ({resetGame}) => {
