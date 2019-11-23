@@ -1,3 +1,5 @@
+The backend of the project can be found at https://github.com/MariaModan/memory-game-backend
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
